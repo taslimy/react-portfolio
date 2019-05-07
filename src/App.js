@@ -11,11 +11,11 @@ export class App extends Component {
     return (
       <Fragment>
         <div className="container">
-        <Header />
+          <Header />
+          <Footer />
         </div>
         <Route exact path="/" component={ProjectHome} />
         <Route exact path="/contact" component={Contact} />
-        <Footer />
       </Fragment>
     );
   }
