@@ -1,0 +1,817 @@
+/* Font Import */
+
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700");
+/* Global */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* misc */
+
+.webdev {
+  color: #aaa;
+  font-size: 10px;
+}
+
+.extraSpacing {
+  margin-top: 0.7em;
+}
+
+.active {
+  color: #000;
+}
+
+/* large button*/
+
+.buttonLink a {
+  color: #333;
+}
+
+.buttonLink {
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border: 1px solid #333;
+  background: transparent;
+}
+
+.buttonLink:hover {
+  transition: all 0.5s ease;
+  color: #fff;
+  background-color: #333;
+}
+
+/* general */
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #111;
+  background-color: #fff;
+}
+
+#container {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Navigation Menu */
+
+header {
+  display: flex;
+  justify-content: space-around;
+  color: #414141;
+  padding: 20px;
+  margin: 20px auto -20px;
+  background: white;
+  z-index: 1;
+}
+
+header h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #222;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+header nav {
+  display: flex;
+  color: #414141;
+  letter-spacing: 0.2em;
+}
+
+header nav li {
+  font: 12px normal "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  color: #a8a8a7;
+  font-size: 16px;
+  transition: color 0.4s ease 0s;
+  margin: 0 15px;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav li a {
+  color: #b8b8b8;
+}
+
+header nav li a:hover {
+  color: #202124;
+  text-decoration: none !important;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+header nav li.current a {
+  color: #5f6368;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: normal;
+}
+
+header nav li:first-child {
+  margin-left: 0;
+}
+
+header nav li:last-child {
+  margin-right: 0;
+}
+
+ul,
+nav {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+#nav:checked + .nav-open {
+  transform: rotate(45deg);
+}
+
+#nav:checked + .nav-open i {
+  background: #414141;
+  transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-open i:nth-child(1) {
+  transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav-open i:nth-child(2) {
+  opacity: 0;
+}
+
+#nav:checked + .nav-open i:nth-child(3) {
+  transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav-container {
+  z-index: 9990;
+  opacity: 1;
+}
+
+#nav:checked ~ .nav-container ul li a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none;
+}
+
+/* My Project Card */
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto -20px;
+  max-width: 1200px;
+}
+
+.img-container {
+  width: auto;
+  overflow: hidden;
+}
+
+ul.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+ul.project-list li {
+  overflow: hidden;
+  margin-top: 20px;
+  height: 650px;
+}
+
+ul.project-list a {
+  color: #fff;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+ul.project-list a img {
+  position: relative;
+  transition: all 0.5s ease;
+  z-index: 0;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+}
+
+ul.project-list a .project-title {
+  top: 50%;
+  bottom: 37%;
+  position: absolute;
+  z-index: 99;
+  transform: translateY(-50%);
+  width: 100%;
+  transition: all 0.5s ease;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  display: flex;
+}
+
+ul.project-list a .project-title h2 {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 0.2em;
+  margin-bottom: 0;
+  font-size: 40px;
+}
+
+ul.project-list a .project-title h3 {
+  margin-bottom: 20px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+
+ul.project-list a .project-title h4 {
+  display: inline-block;
+  font-size: 13px;
+  opacity: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 10px 30px;
+  margin: 0;
+  border: 1px solid #e8eaed;
+  /* border-radius: 4px; */
+  width: auto;
+  transition: all 0.5s ease;
+  position: relative;
+  top: -30px;
+}
+
+ul.project-list a .project-title h4:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #333;
+}
+
+ul.project-list a:hover .project-title {
+  margin-top: 0;
+}
+
+ul.project-list a:hover img,
+ul.project-list a:hover h4 {
+  transition: all 0.5s ease;
+}
+
+ul.project-list a:hover h4 {
+  opacity: 1;
+  top: 0;
+}
+
+ul.project-list a:hover img {
+  border: 1px solid white;
+  filter: blur(3px);
+  transform: scale(1.055);
+}
+
+/* About Page*/
+
+#aboutMe {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto -20px;
+}
+
+.aboutP {
+  font-weight: 300;
+  color: #3a4145;
+  font-size: 15px;
+  line-height: 2.5;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.aboutP h2 {
+  letter-spacing: 0.2em;
+  color: #111;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eaeaeb;
+}
+
+.aboutProject {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  width: 33%;
+}
+
+.aboutImg {
+  width: 100%;
+  height: 500px;
+  margin: 20px auto 0px;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  color: #414141;
+  border-top: 1px solid #eaeaeb;
+  padding: 20px;
+  margin: 20px auto -20px;
+  width: 1200px;
+}
+
+footer nav {
+  display: flex;
+  color: #414141;
+  letter-spacing: 0.2em;
+}
+
+footer nav li {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #a8a8a7;
+  font-size: 12px;
+  transition: color 0.4s ease 0s;
+  margin: 0px 15px;
+}
+
+footer nav li a {
+  color: #aaa;
+}
+
+footer nav li a:hover {
+  color: #111;
+  text-decoration: none !important;
+  transition: all 0.5s ease;
+}
+
+footer nav li.current a {
+  color: #000;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: normal;
+}
+
+.foot {
+  font-size: 12px;
+}
+
+/* project Page */
+
+.projectCover {
+  height: 500px;
+  width: 100%;
+  margin: 20px auto 0px;
+}
+
+.projectHead {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  line-height: 2.5;
+  padding: 30px;
+}
+
+.projectHead h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.projectHead h2 {
+  color: #999;
+}
+
+.projectHead ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.projectHead ul li {
+  padding: 0px 5px 0px 0px;
+  color: #999;
+}
+
+.projectDescription p {
+  width: auto;
+}
+
+/* .projectDescription a {
+      text-decoration: none !important;
+      transition: all 0.5s ease;
+      color: #79a1c5;
+    } */
+
+/* Media Queries */
+
+@media screen and (max-width: 1200px) {
+  header {
+    width: 800px;
+  }
+
+  ul.project-list li {
+    overflow: hidden;
+    margin-top: 20px;
+    height: auto;
+  }
+
+  footer {
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    width: auto;
+  }
+
+  header h1 {
+    margin-top: 10px;
+    margin-left: -50px;
+  }
+
+  .img-container {
+    height: auto;
+    width: auto;
+  }
+
+  ul.project-list li {
+    overflow: hidden;
+    margin-top: 20px;
+    height: auto;
+  }
+
+  ul.project-list a:hover .project-title {
+    margin-top: -35px;
+  }
+
+  ul.project-list a .project-title h3 {
+    margin-bottom: 20px;
+    width: auto;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+  }
+
+  ul.project-list a .project-title h4 {
+    display: inline-block;
+    font-size: 13px;
+    opacity: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 10px 30px;
+    margin: 0;
+    border: 1px solid #e8eaed;
+    /* border-radius: 4px; */
+    width: auto;
+    transition: all 0.5s ease;
+    position: relative;
+    top: -10px;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #333;
+  }
+
+  ul.project-list a .project-title h4:hover {
+    opacity: 0.8;
+  }
+
+  footer {
+    width: 768px;
+    flex-direction: column;
+  }
+
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: whitesmoke;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  .nav-container ul {
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .nav-container ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-container ul li:nth-child(1) a {
+    transition-delay: 0.2s;
+  }
+
+  .nav-container ul li:nth-child(2) a {
+    transition-delay: 0.3s;
+  }
+
+  .nav-container ul li:nth-child(3) a {
+    transition-delay: 0.4s;
+  }
+
+  .nav-container ul li:nth-child(4) a {
+    transition-delay: 0.5s;
+  }
+
+  .nav-container ul li:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .nav-container ul li a {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    border-bottom: 1px solid #414141;
+    padding: 10px 25px;
+    opacity: 0;
+    color: #414141;
+    font-size: 20px;
+    transform: translateY(-20px);
+    transition: all 0.2s ease;
+  }
+
+  .nav-open {
+    position: absolute;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    top: 58px;
+  }
+
+  .nav-open i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #1f2227;
+    border-radius: 2px;
+    /* margin-left: 14px; */
+  }
+
+  .nav-open i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+  }
+
+  .nav-open i:nth-child(3) {
+    margin-top: 4px;
+  }
+}
+
+@media screen and (max-width: 778px) and (min-width: 320px) {
+  header {
+    width: auto;
+  }
+
+  .webdev {
+    display: flex;
+  }
+
+  container {
+    flex-direction: column;
+  }
+
+  header h1 {
+    margin-top: 10px;
+    margin-left: -50px;
+  }
+
+  .img-container {
+    height: auto;
+    width: auto;
+  }
+
+  ul.project-list li {
+    overflow: hidden;
+    margin-top: 20px;
+    height: auto;
+  }
+
+  ul.project-list a .project-title {
+    top: 40%;
+  }
+
+  ul.project-list a:hover .project-title {
+    margin-top: -35px;
+  }
+
+  ul.project-list a .project-title h3 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    margin: 0px auto 20px;
+  }
+
+  ul.project-list a .project-title h4 {
+    display: inline-block;
+    font-size: 13px;
+    opacity: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 10px 30px;
+    margin: 0;
+    border: 1px solid #e8eaed;
+    /* border-radius: 4px; */
+    width: auto;
+    transition: all 0.5s ease;
+    position: relative;
+    top: -10px;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #333;
+  }
+
+  ul.project-list a .project-title h4:hover {
+    opacity: 0.8;
+  }
+
+  footer {
+    width: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: whitesmoke;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  .nav-container ul {
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .nav-container ul li {
+    float: none;
+    width: 100%;
+  }
+
+  .nav-container ul li:nth-child(1) a {
+    transition-delay: 0.2s;
+  }
+
+  .nav-container ul li:nth-child(2) a {
+    transition-delay: 0.3s;
+  }
+
+  .nav-container ul li:nth-child(3) a {
+    transition-delay: 0.4s;
+  }
+
+  .nav-container ul li:nth-child(4) a {
+    transition-delay: 0.5s;
+  }
+
+  .nav-container ul li:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .nav-container ul li a {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    border-bottom: 1px solid #414141;
+    padding: 10px 25px;
+    opacity: 0;
+    color: #414141;
+    font-size: 20px;
+    transform: translateY(-20px);
+    transition: all 0.2s ease;
+  }
+
+  .nav-open {
+    position: absolute;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    top: 58px;
+  }
+
+  .nav-open i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #414141;
+    border-radius: 2px;
+  }
+}
+
+@media screen and (max-width: 443px) {
+  ul.project-list a .project-title {
+    top: 35%;
+  }
+
+  ul.project-list a:hover .project-title {
+    margin-top: auto;
+  }
+
+  ul.project-list a .project-title h2 {
+    font-size: 30px;
+  }
+
+  ul.project-list a .project-title h3 {
+    margin: 0px auto 20px;
+    text-align: center;
+  }
+
+  ul.project-list a .project-title h4 {
+    width: auto;
+  }
+
+  footer {
+    width: auto;
+  }
+
+  footer nav {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .webdev {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  ul.project-list a .project-title {
+    top: 31%;
+  }
+
+  ul.project-list a:hover .project-title {
+    margin-top: auto;
+  }
+
+  ul.project-list a .project-title h2 {
+    font-size: 30px;
+  }
+
+  ul.project-list a .project-title h3 {
+    margin: 0px auto 20px;
+    text-align: center;
+  }
+
+  ul.project-list a .project-title h4 {
+    width: auto;
+  }
+
+  footer {
+    width: auto;
+  }
+
+  footer nav {
+    align-items: center;
+    flex-direction: column;
+  }
+}
