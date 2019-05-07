@@ -12,10 +12,10 @@ export class App extends Component {
       <Fragment>
         <div className="container">
           <Header />
+          <Route exact path="/" component={ProjectHome} />
+          <Route exact path="/contact" component={Contact} />
           <Footer />
         </div>
-        <Route exact path="/" component={ProjectHome} />
-        <Route exact path="/contact" component={Contact} />
       </Fragment>
     );
   }
